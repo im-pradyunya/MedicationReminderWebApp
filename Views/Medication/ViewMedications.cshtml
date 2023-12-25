@@ -1,0 +1,72 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<MedicationReminder.Models.ViewModel.UserMedicationInfo>
+
+<div class="container mt-5">
+
+    <div class="card-body">
+        <form method="post">
+
+            <button type="submit" class="btn btn-primary" asp-controller="Medication" asp-action="MedicationDetail">Add Medication</button>
+        </form>
+    </div>
+</div>
+</div>
+
+
+<div class="container mt-5 cc">
+    <h2 class="cc title">Medication Reminder Table</h2>
+    <h4 class="cc title">You will receive a Mail as a Reminder</h4>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr class="cc">
+                <th scope="col">ID</th>
+                <th scope="col">Medicine Name</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Morning Dose</th>
+                <th scope="col">Morning Dose Time</th>
+                <th scope="col">Afternoon Dose </th>
+                <th scope="col">Afternoon Dose Time</th>
+                <th scope="col">Night Dose </th>
+                <th scope="col">Night Dose Time</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="cc">
+            @foreach(var d in Model)
+            {
+                <tr>
+              
+                  
+                    <td>@d.MedicineId</td>
+                    <td>@d.MedicineName</td>
+                    <td>@d.FromDate</td>
+                    <td>@d.ToDate</td>
+                    <td>@d.MorningDose</td>
+                    <td>@d.MorningDoseTime</td>
+                    <td>@d.AfternoonDose</td>
+                    <td>@d.AfternoonDoseTime</td>
+                    <td>@d.NightDose</td>
+                    <td>@d.NightDoseTime</td>
+                    <td>
+                        <a class="btn  btn-outline-warning" asp-controller="Crud" asp-action="Edit" asp-route-id="">Mark As Taken</a>
+                    </td>
+                    <td>
+                       
+                        <a class="btn btn-sm btn-warning" asp-controller="Crud" asp-action="Edit" asp-route-id="">Edit</a>
+                        <a class="btn btn-sm btn-danger" asp-controller="Crud" asp-action="Delete" asp-route-id="">Delete</a>
+                    </td>
+
+                </tr>
+
+            }
+
+        </tbody>
+        
+    </table>
+</div>

@@ -1,0 +1,157 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> signInManager
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+  
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+ 
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Welcome to Medication Reminder</h1>
+            <p class="lead text-muted">Stay healthy with timely medication reminders.</p>
+            <p>
+                @if(!signInManager.IsSignedIn(User))
+                {
+                    <a class="btn btn-primary my-2" asp-controller="Account" asp-action="Register">Get Started</a>
+                    <a class="btn btn-secondary my-2" asp-controller="Account" asp-action="Login">Log In</a>
+                }
+                else
+                {
+                    
+                    <a class="btn btn-primary my-2" asp-controller="Medication" asp-action="ViewMedications">view Medication Detail</a>
+                }
+
+               
+            </p>
+        </div>
+
+        <div class="container">
+          
+            <p class="intro-text">A dedicated platform designed to support your health and well-being as you navigate medication routines and overall wellness. We understand the importance of managing medications and maintaining a healthy lifestyle, especially for individuals aged 65 and above.</p>
+            <p class="intro-text">Our goal is to assist you in organizing your medications, providing timely reminders, and offering valuable health-related information tailored to your needs. Together, we aim to make your health journey smoother and enhance your quality of life.</p>
+            <!-- You can add more content or features here -->
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card bg-primary text-white text-center p-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Medication Schedules</h5>
+                        <p class="card-text">Create and manage your medication schedule easily.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card bg-secondary text-white text-center p-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Custom Reminders</h5>
+                        <p class="card-text">Set personalized reminders for each medication</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card bg-success text-white text-center p-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Health Tracking</h5>
+                        <p class="card-text">Monitor health vitals like blood pressure, sugar levels, etc.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card bg-info text-white text-center p-4">
+                    <div class="card-body">
+                        <h5 class="card-title">User Profiles</h5>
+                        <p class="card-text">Maintain individual profiles with personalized health information..</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <footer class="bg-dark text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Follow Us</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Facebook</a></li>
+                            <li><a href="#" class="text-white">Twitter</a></li>
+                            <li><a href="#" class="text-white">Instagram</a></li>
+                            <li><a href="#" class="text-white">LinkedIn</a></li>
+                            <li><a href="#" class="text-white">GitHub</a></li>
+                            <!-- Add more social media links as needed -->
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">About Us</a></li>
+                            <li><a href="#" class="text-white">Contact Us</a></li>
+                            <li><a href="#" class="text-white">Terms of Service</a></li>
+                            <li><a href="#" class="text-white">Privacy Policy</a></li>
+                            <!-- Add more links as needed -->
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>Designer & Developer</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Pradyunya Chunchwar</a></li>
+                          
+                            <!-- Add more links as needed -->
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>Contact Us</h5>
+                        <ul class="list-unstyled">
+                            <li>pradyunyachunchwar84@gmail.com</li>
+                            <li>Phone: +91 8459576430</li>
+                            <!-- Add more contact information as needed -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+           </section>
+
+  
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+    <!-- Your content goes here -->
+    <!-- Bootstrap JS (optional, for some Bootstrap components that require JS) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

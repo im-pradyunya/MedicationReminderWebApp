@@ -1,0 +1,41 @@
+﻿@model MedicationReminder.Models.ViewModel.Login
+@{
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-6">
+            <div class="registration-section">
+                <div class="egistration-content text-center text-white">
+                    <h1>Welcome Back</h1>
+                    <h2>Login to Your Account</h2>
+                    <p>Don't have an account? <a  asp-action="Register" asp-controller="Account" class="text-warning">Create an Account</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-6">
+            <div class="registration-form mt-5">
+                <h2 class="mb-4">Login</h2>
+                <form method="post">
+                    <div asp-validation-summary="All" class="text-danger"> </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter Email Address" asp-for="Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter Password" asp-for="Password">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                 
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

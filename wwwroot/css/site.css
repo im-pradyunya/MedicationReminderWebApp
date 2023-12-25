@@ -1,0 +1,208 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Custom CSS for navbar */
+.navbar-custom {
+    background-color: #3f51b5; /* Change the background color */
+}
+
+    .navbar-custom .navbar-brand, .navbar-custom .navbar-nav .nav-link {
+        color: #fff; /* Change the text color */
+    }
+
+        .navbar-custom .navbar-nav .nav-link:hover {
+            color: #ccc; /* Change the hover color */
+        }
+
+.navElement:hover {
+    border-bottom:1px solid white;
+
+    color: black;
+}
+
+.welcome-section {
+    background-color: #f8f9fa; /* Set background color */
+    padding: 50px 20px; /* Add padding */
+    text-align: center; /* Center align text */
+}
+
+.welcome-message {
+    font-size: 24px; /* Set font size */
+    color: #333; /* Set text color */
+    margin-bottom: 20px; /* Add space at the bottom */
+}
+
+.intro-text {
+    font-size: 18px; /* Set font size */
+    color: #555; /* Set text color */
+}
+
+
+
+
+.card {
+    margin-bottom: 20px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+    .card:hover {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+body {
+    background-color: #3d2b1f;
+    font-family: Arial, sans-serif;
+}
+
+.registration-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 160px;
+    color: white;
+}
+
+.registration-form {
+    background-color: #ffa07a;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+    .registration-form h2 {
+        font-weight: bold;
+        color: #3d2b1f;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .registration-form label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        color: #333;
+    }
+
+    .registration-form button {
+        background-color: #00cd00;
+        margin-top: 10px;
+        border: none;
+    }
+
+        .registration-form button:hover {
+            background-color: #e86100;
+        }
+
+    .registration-form:hover {
+        transform: scale(1.02);
+    }
+.form-group label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.btn-submit {
+    border-radius: 0;
+}
+
+.form-card {
+    background-color: #f8f9fa; /* Background color */
+    border-radius: 15px;
+    padding: 30px;
+    width:60%;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin:auto;
+}
+
+
+
+.form-card:hover {
+    transform: translateY(-5px); /* Hover effect */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.form-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.btn-submit {
+    border-radius: 8px;
+}
+
+
+
+.container1 {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.form-control1 {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.form-check-input1:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.form-check-input1:focus {
+    box-shadow: none;
+}
+
+.btn-primary1 {
+    background-color: #007bff;
+    border: none;
+}
+
+    .btn-primary1:hover {
+        background-color: #0056b3;
+    }
+        .cc
+            {
+                color:white;
+            }
+
+.title
+{
+    color:lawngreen;
+}
+th{
+    color:khaki;
+}

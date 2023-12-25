@@ -1,0 +1,132 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model MedicationReminder.Models.ViewModel.UserMedicationInfo
+@inject UserManager<ApplicationUser> UserManager
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var user = await UserManager.GetUserAsync(User);
+}
+
+
+<div class="container1">
+    <h2>Medication Details</h2>
+    <form method="post">
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="fromDate" class="form-label" >Reg No. </label>
+                <input type="text" class="form-control2" value="@user.Id" id="fromDate" asp-for="Id" disabled >
+            </div>
+
+            <div class="col-md-6">
+                <label for="fromDate" class="form-label">Email ID</label>
+                <input type="text" class="form-control2" value="@user.Email" id="fromDate" asp-for="Email"  >
+            </div>
+
+            <div class="col-md-6">
+                <label for="toDate" class="form-label">Name</label>
+                <input type="text" class="form-control2" id="toDate" value="@user.Name" asp-for="user" disabled>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="medicineName" class="form-label">Medicine Name</label>
+            <input type="text" class="form-control2" id="medicineName" placeholder="Enter Medicine Name" asp-for="MedicineName">
+            <span asp-validation-for="MedicineName" class="text-danger"></span>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="fromDate" class="form-label">From Date</label>
+                <input type="date" class="form-control2" id="fromDate" asp-for="FromDate" >
+                <span asp-validation-for="FromDate" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label for="toDate" class="form-label">To Date</label>
+                <input type="date" class="form-control2" id="toDate" asp-for="ToDate">
+                <span asp-validation-for="ToDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Select Dose(s)</label>
+            <div class="form-check">
+                <input class="form-check-input1" type="checkbox" id="morningDose" value="false" asp-for="MorningDose">
+                <label class="form-check-label" for="morningDose">Morning Dose</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input1" type="checkbox" id="afternoonDose" value="false" asp-for="AfternoonDose">
+                <label class="form-check-label" for="afternoonDose">Afternoon Dose</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input1" type="checkbox" id="nightDose" value="false" asp-for="NightDose">
+                <label class="form-check-label" for="nightDose">Night Dose</label>
+            </div>
+
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="morningTime" class="form-label">Morning Time</label>
+                <input type="time" class="form-control1" id="morningTime" disabled asp-for="MorningDoseTime">
+            </div>
+            <div class="col-md-4">
+                <label for="afternoonTime" class="form-label">Afternoon Time</label>
+                <input type="time" class="form-control1" id="afternoonTime" disabled asp-for="AfternoonDoseTime">
+            </div>
+            <div class="col-md-4">
+                <label for="nightTime" class="form-label">Night Time</label>
+                <input type="time" class="form-control1" id="nightTime" disabled asp-for="MedicineName">
+            </div>
+        </div>
+
+
+
+        
+
+
+               <button type="submit" class="btn btn-primary1">Submit</button>
+
+    </form>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#morningDose').change(function () {
+            if (this.checked) {
+                this.value = true;
+                $('#morningTime').prop('disabled', false);
+            } else {
+                $('#morningTime').prop('disabled', true);
+            }
+        });
+
+        $('#afternoonDose').change(function () {
+            if (this.checked) {
+                $('#afternoonTime').prop('disabled', false);
+                this.value = true;
+            } else {
+                $('#afternoonTime').prop('disabled', true);
+            }
+        });
+
+        $('#nightDose').change(function () {
+            if (this.checked) {
+              
+                $('#nightTime').prop('disabled', false);
+                this.value = true;
+            } else {
+                $('#nightTime').prop('disabled', true);
+            }
+        });
+    });
+
+
+    $(document).ready(function () {
+        var today = new Date().toISOString().split('T')[0];
+        $('#fromDate').attr('min', today);
+        $('#toDate').attr('min', today);
+    });
+</script>
