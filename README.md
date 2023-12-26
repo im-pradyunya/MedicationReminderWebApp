@@ -1,1 +1,1 @@
-[View PDF File](https://im-pradyunya.github.io/MedicationReminderWebApp/medicationReminderDemoScreenShot.pdf)
+[Medication Reminder Output ScreenShot ](https://github.com/im-pradyunya/MedicationReminderWebApp/blob/master/medicationReminderDemoScreenShot.pdf)
